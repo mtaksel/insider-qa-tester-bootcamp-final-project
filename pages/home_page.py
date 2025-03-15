@@ -14,7 +14,7 @@ class HomePage(BasePage):
     def accept_cookies(self):
         self.click_element(*self.ACCEPT_COOKIES)
 
-    # Locates search bar and types "samsuns" in search input
+    # Locates the search bar and types "samsung" in search input
     def type_search_in_the_search_bar(self):
         self.find(*self.SEARCH_BAR).send_keys(self.search_object)
 

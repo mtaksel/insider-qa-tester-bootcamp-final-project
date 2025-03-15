@@ -9,23 +9,23 @@ class FilterPage(BasePage):
     SECOND_PAGE_BUTTON = (By.XPATH, "//a[@aria-label='2 sayfasına git']")
     second_page_url = 'page=2'
 
-    # Scrolls the page twice
+    # Scrolls down the page twice
     def scroll_down_two_time(self):
         for i in range(2):
             self.driver.execute_script("window.scrollBy(0, 3850);")
             sleep(2)
 
-    # Scrolls the page one time
+    # Scrolls down the page one time
     def scroll_down_one_time(self):
         for i in range(1):
             self.driver.execute_script("window.scrollBy(0, 800);")
 
-    # Clicks the '2' button on bottom right to go second page of the search results page
+    # Clicks the '2' button on bottom, to go second page of the search results page
     def click_second_page_button(self):
         self.driver.implicitly_wait(10)
         self.click_element(*self.SECOND_PAGE_BUTTON)
 
-    # Returns the text of third product from search results page
+    # Returns the text of the third product from search results page
     def get_third_product_text(self):
         return self.get_text(self.THIRD_PRODUCT).lower()
 
